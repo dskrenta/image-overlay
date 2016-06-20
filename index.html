@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Image Overlay</title>
+    <style>
+      #canvas {
+
+      }
+      #background {
+        display: none;
+      }
+      #overlay {
+        position: absolute;
+        top: 200px;
+        left: 400px;
+        cursor: move;
+        opacity: 0.8;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="810" height="415"></canvas>
+    <br />
+    <button id="draw">Draw</button>
+    <img src="ahmed.jpg" id="background" />
+    <img src="obama.jpg" id="overlay" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0-rc.2/jquery-ui.min.js" integrity="sha256-55Jz3pBCF8z9jBO1qQ7cIf0L+neuPTD1u7Ytzrp2dqo=" crossorigin="anonymous"></script>
+    <script src="background.js"></script>
+  </body>
+</html>
