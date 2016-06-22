@@ -3,18 +3,26 @@ $(document).ready(function() {
     var context = d_canvas.getContext('2d');
     var background = document.getElementById('background');
     var overlay = document.getElementById('overlay')
+    var start = document.getElementById('start');
     context.drawImage(background, 0, 0, 810, 415);
+    context.drawImage(start, 550, 140);
 
-    $('#overlay').draggable();
+    $('#dragHelper').draggable({
+	    scroll: false
+    });
+    $('#overlay').resizable();
 
     $('#draw').click(function() {
-        var $overlay = $('#overlay')
+        var $overlay = $('#overlay');
         var $canvas = $('#canvas');
-        var overlay_x = $overlay.offset().left - $canvas.offset().left
-        var overlay_y = $overlay.offset().top - $canvas.offset().top;
+        var $dragHelper = $('#dragHelper');
+        var overlay_x = ($overlay.offset().left + 3) - $canvas.offset().left
+        var overlay_y = ($overlay.offset().top + 3) - $canvas.offset().top;
+        var tweet = document.getElementById('overlay');
 
-        context.drawImage(overlay, overlay_x, overlay_y);
+        context.drawImage(overlay, overlay_x, overlay_y, tweet.width, tweet.height);
 
+        $dragHelper.hide();
         $overlay.hide();
         $(this).attr('disabled', 'disabled');
     });
