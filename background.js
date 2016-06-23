@@ -20,6 +20,8 @@ $(document).ready(function() {
         var overlay_y = ($overlay.offset().top + 3) - $canvas.offset().top;
         var tweet = document.getElementById('overlay');
 
+        context.clearRect(0, 0, d_canvas.width, d_canvas.height);
+        context.drawImage(background, 0, 0, 810, 415);
         context.drawImage(overlay, overlay_x, overlay_y, tweet.width, tweet.height);
 
         $dragHelper.hide();
